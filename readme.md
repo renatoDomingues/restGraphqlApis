@@ -20,10 +20,14 @@ npm install body-parser
 ## INSTALL:
 ````
 npm install apollo-server-express
+npm install graphql
+npm install mysql2
 `````
 
 ## Installed:
 ````
 - apollo-server-express
 - gql
+- graphql
+- mysql2
 ````
