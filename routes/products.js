@@ -10,6 +10,9 @@ router.put('/:id', productsController.put)
 router.post('/', productsController.create)
 router.get('/:id', productsController.getById)
 router.get('/', productsController.getAll)
+router.post('/:id/images', productsController.createImage)
+router.post('/:id/category', productsController.createCategory)
+router.delete('/:productId/images/:id', productsController.removeImage)
 
 //DELETE=>delete the data
 /*

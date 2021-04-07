@@ -88,3 +88,13 @@ const migration = async() => {
     await connection.close()
 }
 migration()
+
+//https://github.com/tuliofaria/fsm-acesso-bds/tree/master/acesso-mysql
+//http://localhost/phpmyadmin/
+//node db.js 
+//node migration.js
+//node index.js
+//http://localhost:3000/graphql
+//req.params => contém parâmetros de rota (na parte do caminho do URL)
+//req.query => contém os parâmetros de consulta de URL
+//Implementar o CRUD (criar, retornar, atualizar e excluir) de categorias tanto em REST quanto em GraphQL :)​

@@ -1,12 +1,17 @@
 
-const { getAllProducts, createProduct } = require('./products')
+//mapping =>
+const { getAllProducts, createProduct, deleteProduct, updateProduct, createImageOnProduct, deleteImageOnProduct } = require('./products')
 
 const resolvers = {
     Query: {
         getAllProducts
     },
     Mutation: {
-        createProduct
+        createProduct,
+        deleteProduct,
+        updateProduct,
+        createImageOnProduct,
+        deleteImageOnProduct
     }
     }
     module.exports = resolvers
