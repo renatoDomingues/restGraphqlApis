@@ -97,4 +97,24 @@ migration()
 //http://localhost:3000/graphql
 //req.params => contém parâmetros de rota (na parte do caminho do URL)
 //req.query => contém os parâmetros de consulta de URL
-//Implementar o CRUD (criar, retornar, atualizar e excluir) de categorias tanto em REST quanto em GraphQL :)​
+//Implementar o CRUD (criar, retornar, atualizar e excluir) de categorias tanto em REST quanto em GraphQL :)
+/*
+Implementar o CRUD(create, return, update and delete) de categorias tanto em REST quanto em GraphQL:
+
+(1) - Implementar o CRUD em categorias(categories) tanto em REST;
+
+(2) - Implementar o CRUD em categorias(categories) tanto em GraphQL;
+
+
+Resume =>
+
+const createCategory = async(req, res) => {
+    const { categories_products, category_id } = req.body
+    await Product.findAllByCategory(req.params.id, [ categories_products, category_id ])
+    res.send({
+        success: true,
+        data: req.body
+    })
+}
+*/
+​

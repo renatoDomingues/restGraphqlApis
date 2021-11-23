@@ -4,6 +4,10 @@ const init = connection => {
         const conn = await connection
         await conn.query('insert into products (product, price) values (?, ?)', data)
     }
+    const createCategory = async( categories_products, category_id ) => {
+        const conn = await connection
+        await conn.query('insert into categories (category, id) values (?, ?)', [categories_products, category_id])
+    }
 
     const remove = async(id) => {
         const conn = await connection
@@ -88,6 +92,7 @@ const init = connection => {
 
     return {
         create,
+        createCategory,
         remove,
         update,
         updateCategories,
