@@ -1,5 +1,5 @@
 
-const up = async(connection) => {
+const up = async (connection) => {
     await connection.query(`
         CREATE TABLE categories (
             id INT NOT NULL AUTO_INCREMENT,
@@ -35,8 +35,8 @@ const up = async(connection) => {
             CONSTRAINT fk_categories_products_constraint2 FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE ON UPDATE CASCADE
         );
     `)
-}
-const down = async(connection) => {
+  }
+  const down = async (connection) => {
     await connection.query(`
         DROP TABLE categories_products
     `)
@@ -49,7 +49,8 @@ const down = async(connection) => {
     await connection.query(`
         DROP TABLE categories;
     `)
-}
-module.exports = {
+  }
+  module.exports = {
     up, down
-}
+  }
+  

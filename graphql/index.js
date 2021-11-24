@@ -1,34 +1,30 @@
 
 const { ApolloServer, gql } = require('apollo-server-express')
-//const schema = fs.readFileSync('./schema.graphql')
-const fs = require('fs')//manipulate files
+const fs = require('fs')
 const path = require('path')
 const resolvers = require('./resolvers')
+const jwt = require('jsonwebtoken')
 
 const schema = fs.readFileSync(path.join(__dirname, 'schema.graphql'))
-const typeDefs = gql` ${schema} `
+const typeDefs = gql`${schema}`
 
-/*
-const resolvers = {
-Query: {
-    getAllProducts: () => [ { id: '1', name: 'All products' } ]
-},
-Mutation: {
-    createProduct: ( context, { input } ) => {
-        const { id, name } = input
-        console.log(id, name)
-        return {
-            id, name 
-        }
-    }
-}
-}
-*/
 
 const graphqlServer = new ApolloServer({
-typeDefs,
-resolvers
+  typeDefs,
+  resolvers,
+  context: ({ req }) => {
+    if (req.headers && req.headers.authorization) {
+      const header = req.headers.authorization
+      const headerParts = header.split(' ')
+      const secret = 'asdfasdfasdfasdfasdfasdfasdf'
+      try {
+        const payload = jwt.verify(headerParts[1], secret)
+        return { user: payload.user }
+      } catch (err) { }
+    }
+    return {
+    }
+  }
 })
-//graphqlServer.applyMiddleware({ app })
 
 module.exports = graphqlServer

@@ -1,0 +1,24 @@
+
+JWT
+
+*->
+JWT - pode ser visto => pode alterar
+
+
+*->
+payload: carga util do token e pode ser visto;
+hash: é gerado com um chave privada;
+token: não pode ser alterada;
+Não tem problema se algum usuario veja o "token", mas que não pode é ver o "jwt";
+
+
+
+*->
+token => payload + algumas infos e tem um "hash" que pode saber se esse token foi aterado
+
+
+*->
+- refresh_token => long living token, podera ter uma validade como exemplo de 30 dias, sendo que o "refresh_token" gera o "access_token";
+- access_token => short living token, podera ter uma validade bem menor como exemplo de apenas de 1 horas;
+
+

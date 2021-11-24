@@ -4,9 +4,9 @@ const mysql = require('mysql2/promise')
 // without connection pool
 
 module.exports = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    database: 'cat-products'
+  host: 'localhost',
+  user: 'root',
+  database: 'cat-products'
 })
 
 
